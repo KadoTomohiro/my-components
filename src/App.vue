@@ -1,19 +1,24 @@
 <template>
   <div>
     <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld :msg="'Hello Vue 3 + TypeScript + Vite'" />
+    <MyInput v-model="text"></MyInput> {{ text }}
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import MyInput from './components/MyInput.vue'
 
 export default Vue.extend({
   name: 'App',
   components: {
-    HelloWorld
-  }
+    MyInput,
+  },
+  data() {
+    return {
+      text: '',
+    }
+  },
 })
 </script>
 
